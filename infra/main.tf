@@ -137,7 +137,7 @@ resource "tls_private_key" "example_ssh" {
 
 # Create virtual machine
 resource "azurerm_linux_virtual_machine" "my_terraform_vm" {
-  name                  = "myVM"
+  name                  = "k8s-control"
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
   network_interface_ids = [azurerm_network_interface.my_terraform_nic.id]
@@ -156,7 +156,7 @@ resource "azurerm_linux_virtual_machine" "my_terraform_vm" {
     version   = "latest"
   }
 
-  computer_name                   = "myvm1"
+  computer_name                   = "k8s-control"
   admin_username                  = "azureuser"
   disable_password_authentication = true
 
@@ -171,7 +171,7 @@ resource "azurerm_linux_virtual_machine" "my_terraform_vm" {
 }
 
 resource "azurerm_linux_virtual_machine" "my_terraform_vm2" {
-  name                  = "myVM2"
+  name                  = "k8s-worker1"
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
   network_interface_ids = [azurerm_network_interface.my_terraform_nic2.id]
@@ -190,7 +190,7 @@ resource "azurerm_linux_virtual_machine" "my_terraform_vm2" {
     version   = "latest"
   }
 
-  computer_name                   = "myvm2"
+  computer_name                   = "k8s-worker1"
   admin_username                  = "azureuser"
   disable_password_authentication = true
 
@@ -205,7 +205,7 @@ resource "azurerm_linux_virtual_machine" "my_terraform_vm2" {
 }
 
 resource "azurerm_linux_virtual_machine" "my_terraform_vm3" {
-  name                  = "myVM3"
+  name                  = "k8s-worker2"
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
   network_interface_ids = [azurerm_network_interface.my_terraform_nic3.id]
@@ -224,7 +224,7 @@ resource "azurerm_linux_virtual_machine" "my_terraform_vm3" {
     version   = "latest"
   }
 
-  computer_name                   = "myvm3"
+  computer_name                   = "k8s-worker2"
   admin_username                  = "azureuser"
   disable_password_authentication = true
 
