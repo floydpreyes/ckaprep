@@ -141,7 +141,7 @@ resource "azurerm_linux_virtual_machine" "my_terraform_vm" {
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
   network_interface_ids = [azurerm_network_interface.my_terraform_nic.id]
-  size                  = "Standard_DS1_v2"
+  size                  = "Standard_DS2_v2"
 
   os_disk {
     name                 = "myOsDisk"
@@ -175,7 +175,7 @@ resource "azurerm_linux_virtual_machine" "my_terraform_vm2" {
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
   network_interface_ids = [azurerm_network_interface.my_terraform_nic2.id]
-  size                  = "Standard_DS1_v2"
+  size                  = "Standard_DS2_v2"
 
   os_disk {
     name                 = "myOsDisk2"
@@ -209,7 +209,7 @@ resource "azurerm_linux_virtual_machine" "my_terraform_vm3" {
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
   network_interface_ids = [azurerm_network_interface.my_terraform_nic3.id]
-  size                  = "Standard_DS1_v2"
+  size                  = "Standard_DS2_v2"
 
   os_disk {
     name                 = "myOsDisk3"
