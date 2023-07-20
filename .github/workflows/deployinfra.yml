@@ -53,8 +53,6 @@ permissions:
   contents: read
 
 jobs:
-  env:
-    baseDirectory: ./infra
   terraform:
     name: 'Terraform'
     runs-on: ubuntu-latest
@@ -64,7 +62,8 @@ jobs:
     defaults:
       run:
         shell: bash
-
+    env:
+      baseDirectory: ./infra
     steps:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
